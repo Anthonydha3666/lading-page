@@ -24,7 +24,7 @@
       color: #fff;
       font-family: 'Open Sans';
       width: 100%;
-      
+      margin: auto;
     
       
     }
@@ -81,9 +81,10 @@
     /*---------------------------------------*/
     .segunda-caja-grid{
       display: grid;
+    
       margin-top: 200px;
       margin-bottom: 200px;
-     
+      
       text-align: center;
       grid-template-columns:  300px 300px;
       grid-template-rows:   repeat( 2 300px);
@@ -279,11 +280,14 @@
       margin-top: 100px;
     }
     .segunda-caja-grid{
-      grid-template-columns: 400px;
+      grid-template-columns: 350px;
       grid-template-rows: repeat(150px); 
       margin: auto;
       justify-content: center;
+      align-items: center;
+      justify-self: center;
       margin-top: 100px;
+
     }
      .tercera-caja-flex{
       flex-direction: column;
@@ -294,6 +298,7 @@
     grid-template-columns: 100%;
       grid-template-rows: repeat(150px); 
       text-align: center;
+      
     }
     .footer .columna-footer h5{
       display: block;
@@ -347,7 +352,7 @@
    }
    @media (max-width:550px) {
     .barra-lateral {
-      font-size: 10px;
+      font-size: 15px;
       flex-direction: column;
       height: 300px;
     }
