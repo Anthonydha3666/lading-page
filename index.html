@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Fylo landing page with dark theme and features grid</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+    body{      
+      background-color:hsl(218, 28%, 13%);
+      color: #fff;
+      font-family: 'Open Sans';
+      width: 100%;
+      
+    
+      
+    }
+
+    .barra-lateral img{
+    width: 177px;
+    height: 57px;
+    }
+    .barra-lateral{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 100px;
+    }
+    .barra-lateral ul li {
+      list-style: none;
+      float: left;
+      
+      margin: 30px;
+      margin-right: 40px;
+    }
+    .flex-container{
+      width: 50%;
+      margin:auto;
+    }
+    .primera-caja{
+     width: 100%;
+     text-align: center;
+     
+    }
+    .primera-caja img{
+      width: 100%;
+    }
+    .primera-caja h1 {
+      font-size: 30px;
+    }
+    .primera-caja p{
+      margin: 30px;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+    .primera-caja .boton-uno{
+      background-color:hsl(198, 60%, 50%);
+      border-radius: 30px;
+      width: 250px;
+      padding: 10px;
+      margin: auto; 
+    }
+    .boton-uno:hover{
+      background-color: aquamarine;
+      cursor: pointer;
+    }
+    /*---------------------------------------*/
+    .segunda-caja-grid{
+      display: grid;
+      margin-top: 200px;
+      margin-bottom: 200px;
+     
+      text-align: center;
+      grid-template-columns:  300px 300px;
+      grid-template-rows:   repeat( 2 300px);
+      grid-gap:30px;
+      
+    }
+   /*-------------------------------------------*/
+    .tercera-caja-flex{
+     display:flex;
+     
+     margin: 50px;
+     
+     align-items: center;
+    
+   
+  }
+  .tercera-caja-flex img{
+     width: 100%;
+    margin-right: 30px;
+  }
+    .tercera-caja-flex h1{
+      font-size: 50px;
+    }
+    .tercera-caja-flex p{
+      font-size: 15px;
+      
+    }
+    .tercera-caja-flex .boton-dos:hover {
+       border-bottom: 1px solid #fff;
+    
+       width: 150px;
+       cursor: pointer;
+    }
+    .cuarta-caja-grid{
+      display: grid;
+      grid-template-columns:  repeat(3, 390px);
+      grid-template-rows: 300px;
+      grid-gap: 20px;
+      justify-content: center;
+      border-radius: 5px;
+      font-size: 20px;
+      margin:auto;
+      width: 100%;
+    }
+    .cuarta-caja-grid .object-grid{
+      background-color: hsl(215, 51%, 15%);
+      padding: 30px;
+      z-index:  4;
+      width: auto;
+    }
+    .cuarta-caja-grid img{
+      border-radius: 50%;
+      width: 60px;
+      margin-top:50px;
+      position: absolute;
+    }
+    .object-grid{
+       border-radius: 10px;
+       box-shadow: 6px 6px 20px 0px #000;
+    }
+    .object-grid h3{
+     height: 30px;
+     width: 60%;
+     margin: auto;
+     margin-top: 60px;
+    }
+    .object-grid h5{
+      margin: auto;
+      width:200px;
+    }
+    .bg-quotes{
+      position: absolute;
+    }
+    .bg-quotes img{
+      position: absolute;
+      z-index: 3;
+      border-radius: 0;
+      margin:0;
+      margin-left: 10px;
+      margin-top: -35px;
+    }
+ 
+
+   
+    .formulario-diseño{
+      width: 60%;
+      margin:auto; 
+      text-align: center;
+      border-radius: 10px;
+      background-color:hsl(215, 51%, 15%);
+      margin-top: 200px;
+      padding: 60px;
+      z-index: 8;
+      box-shadow: 6px 6px 20px #000;
+
+    }
+    .formulario-diseño h1{
+      padding: 10px;
+    }
+    .formulario-diseño p {
+      padding: 30px;
+    }
+    .formulario-diseño input{
+      width: 500px;
+      border-radius: 25px;
+      border: none;
+      margin-right:30px ;
+    }
+    .formulario-diseño .boton-tres{
+      background-color: hsl(198, 60%, 50%);
+      width: 250px;
+      padding: 15px;
+      border-radius: 25px;
+    }
+    .boton-tres:hover{
+      background-color:aqua;
+      cursor: pointer;
+    }
+    form{
+      display: flex;
+    }
+    label{
+     display: block;
+     color: rgb(250, 7, 7);
+     text-align: center;
+     font-size: 12px;
+     width: 300px;
+    }
+     .footer{
+      display: grid;
+      grid-template-columns: 400px 200px 200px 200px;
+      grid-gap:30px ;
+      margin-top:70px ;
+      justify-content: center;
+      background-color: #000;
+      padding-top:100px ;
+      color: gray;    
+      margin: auto;
+    }
+    .footer ul li:hover{
+      color: #fff;
+      cursor: pointer;
+    }
+    .footer  h5:hover{
+      color: #fff;
+      cursor: pointer;
+    }
+    .footer .div-parrafo:hover{
+      color: #fff;
+      cursor: pointer;
+    }
+    .footer  img{
+      width: 30px;
+      height: 30px;
+
+    }
+    .div-parrafo{
+      display: inline-flex;
+      font-size: 15px;
+    }
+    .div-parrafo img{
+      width: 30px;
+      height: 30px;
+      margin-right: 12px;
+    }
+    .footer .columna-footer ul li {
+      list-style: none;
+      margin: 20px;
+    }
+    .footer .columna-footer h5 {
+      display: flex;
+      margin: 10px;
+      
+    }
+    .footer .columna-footer img{
+      margin-right: 8px;
+    }
+
+   @media (max-width:800px){
+      body {
+       width: 100%;
+       min-width: 300px;
+     }
+   
+     .primera-caja{
+      width: 100%;
+     }
+     .cuarta-caja-grid{
+      grid-template-columns: 400px;
+      grid-template-rows: repeat(150px); 
+      margin: auto;
+      min-width: 400px;
+      margin-top: 100px;
+    }
+    .segunda-caja-grid{
+      grid-template-columns: 400px;
+      grid-template-rows: repeat(150px); 
+      margin: auto;
+      justify-content: center;
+      margin-top: 100px;
+    }
+     .tercera-caja-flex{
+      flex-direction: column;
+      
+     margin-bottom: 100px;
+   }
+   .footer{
+    grid-template-columns: 100%;
+      grid-template-rows: repeat(150px); 
+      text-align: center;
+    }
+    .footer .columna-footer h5{
+      display: block;
+      margin: auto;
+      width: 100%;
+    }
+    
+    .flex-container{
+      width: 100%;
+      margin: auto;
+    }
+    .tercera-caja-flex{
+      text-align: center;
+      
+    }
+    .tercera-caja-flex img{
+        margin: 0;
+    } 
+    .formulario-diseño{
+      margin: auto;
+      min-width: 350px;
+      margin-top:100px;
+    }
+    .formulario-diseño input{
+      width: 100%;
+      text-align: center;
+      height: 50px;
+      display: inline-block;
+      min-width:155px ;
+      margin-bottom: 15px;
+    }
+    .formulario-diseño .boton-tres{
+      height: 60px;
+      min-width: 136px;
+      font-size: 13px;
+
+      margin-bottom: 15px;
+      
+    
+    }
+    form{
+      display: inline-block;
+      
+    }
+    .footer  {
+      width: 100%;
+    }
+  
+    
+
+   }
+   @media (max-width:550px) {
+    .barra-lateral {
+      font-size: 10px;
+      flex-direction: column;
+      height: 300px;
+    }
+    .barra-lateral img {
+      width: 230px;
+      height: 80px;
+      overflow: hidden;
+      object-fit: cover;
+    }
+    .barra-lateral ul  {
+     width: 100%;
+     height: 300px;
+    }
+    .barra-lateral ul li {
+      float: none;
+      text-align: center;
+    }
+  
+   }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="barra-lateral">
+ <img src="./images/logo.svg" alt="">
+  
+  <ul>
+    <li>Features</li>
+    <li>Team</li>
+    <li>Sign In</li>
+  </ul>
+  
+  </div>
+    <div class="flex-container">
+ <div class="primera-caja"> 
+  <img src="./images/illustration-intro.png" alt="">
+  <h1>All your files in one secure location, accessible anywhere.</h1>
+
+ <p>Fylo stores all your most important files in one secure location. Access them wherever 
+  you need, share and collaborate with friends family, and co-workers.</p> 
+
+ <div class="boton-uno">Get Started</div> 
+</div>
+<div class="segunda-caja-grid">
+
+<div class="grid-objecto">
+  <img src="./images/icon-access-anywhere.svg" alt="">
+ <h3>Access your files, anywhere</h3> 
+
+ <p>The ability to use a smartphone, tablet, or computer to access your account means your 
+  files follow you everywhere.</p> 
+</div>
+<div class="grid-objecto">
+  <img src="./images/icon-security.svg" alt="">
+ <h3>Security you can trust</h3> 
+
+ <p>2-factor authentication and user-controlled encryption are just a couple of the security 
+  features we allow to help secure your files.</p> 
+</div>
+<div class="grid-objecto">
+  <img src="./images/icon-collaboration.svg" alt="">
+ <h3>Real-time collaboration</h3> 
+
+ <p>Securely share files and folders with friends, family and colleagues for live collaboration. 
+  No email attachments required.</p> 
+</div> 
+
+
+ <div class="grid-objecto">
+   <img src="./images/icon-any-file.svg" alt="">
+  <h3>Store any type of file</h3> 
+ <p>Whether you're sharing holidays photos or work documents, Fylo has you covered allowing for all 
+  file types to be securely stored and shared.</p>
+   </div> 
+</div>
+</div>
+<div class="tercera-caja-flex"> 
+  <div class="objecto-flex"> 
+  <img src="./images/illustration-stay-productive.png" alt="">
+</div>
+  <div class="objecto-flex">
+  <h1>Stay productive, wherever you are
+</h1> 
+ <p>Never let location be an issue when accessing your files. Fylo has you covered for all of your file 
+  storage needs.
+ <br>
+ <br>
+  Securely share files and folders with friends, family and colleagues for live collaboration. No email 
+  attachments required.</p> 
+
+ <div class="boton-dos">See how Fylo works</div> 
+</div>
+</div>
+<div class="cuarta-caja-grid"> 
+  <div class="bg-quotes"><img  src="./images/bg-quotes.png" alt=""></div>
+ <div class="object-grid">
+  <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has 
+  become a well-oiled collaboration machine.</p> 
+   
+  <img src="./images/profile-1.jpg" alt="">
+<div class="perfil ">
+  <h3>Satish Patel</h3> 
+   <h5>Founder & CEO, Huddle</h5> 
+ </div>
+</div>
+ <div class="object-grid"> 
+ <p> Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has 
+  become a well-oiled collaboration machine.</p>
+  
+  <img src="./images/profile-2.jpg" alt="">
+  <div class="perfil ">
+  <h3>Bruce McKenzie</h3> 
+  <h5>Founder & CEO, Huddle</h5> 
+</div>
+ </div>
+<div class="object-grid">
+ <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has 
+  become a well-oiled collaboration machine.</p> 
+ 
+ <img src="./images/profile-3.jpg" alt="">
+  <div class="perfil ">
+ <h3> Iva Boyd</h3>
+ <h5> Founder & CEO, Huddle</h5>
+</div>
+</div>
+ 
+</div> 
+<div class="formulario-diseño">
+<h1>Get early access today</h1>
+ <p>It only takes a minute to sign up and our free starter tier is extremely generous. If you have any 
+  questions, our support team would be happy to help you.</p> 
+   <form>
+    <input type="text" name="" id="">
+    <div class="boton-tres">Get Started For Free</div>
+   </form>
+    <label for="">please enter a valid email address</label>
+ 
+</div><img src="./images/logo.svg" alt="">
+<div class="footer">
+
+
+ <div class="div-parrafo"><img src="./images/icon-location.svg" alt="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+  dolore magna aliqua</div> 
+  <div class="columna-footer">
+ <h5><img src="./images/icon-phone.svg" alt="">+1-543-123-4567</h5>
+  <h5><img src="./images/icon-email.svg" alt="">example@fylo.com</h5>
+
+  </div>
+ <div class="columna-footer">
+ <ul>
+  <li>About Us</li>
+  <li>Jobs</li>
+  <li>Press</li>
+  <li>Blog </li>
+ </ul> 
+  
+  </div> 
+<div class="columna-footer">
+ <ul>
+  <li>Contact Us</li>
+  <li>Terms</li>
+  <li>Privacy</li>
+ </ul>
+ 
+  
+  
+ </div>
+ 
+
+</div>
+
+
+</body>
+</html>
